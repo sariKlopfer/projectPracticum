@@ -1,35 +1,181 @@
-.App {
-  text-align: center;
+/* סגנון לכפתורים */
+.add-button, .export-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  border: none;
+  background: transparent;
+  margin: 10px 9px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-button:hover, .export-button:hover {
+  background: #005997;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-button::before, .export-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #03e9f4;
+  z-index: -1;
+  transition: .5s;
+  border-radius: 5px;
+  transform: scaleX(0);
 }
 
+.add-button:hover::before, .export-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* סגנון לטבלה */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* סגנון לתאים */
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd; /* קווים תחתונים לכל תא */
+}
+
+/* סגנון לכפתורים בתא */
+td button {
+  margin-right: 5px;
+  margin-right: -68px;
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    color: #03e9f4;
+    font-size: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border: none;
+    background: transparent;
+}
+
+/* סגנון ל header */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  font-size: calc(10px + 2vmin);
+ 
+  
 }
 
-.App-link {
-  color: #61dafb;
+/* עיצוב הכפתורים בקופסא העליונה */
+.top-container {
+
+  padding: 10px;
+  border-bottom: 5px solid #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*כפתור שדה חיפוש*/
+.search-input {
+  width: 30%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+
+}
+
+/* .search-input:hover {
+  background-color: #005997;;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+} */
+
+.search-input::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #03e9f4;
+  z-index: -1;
+  transition: .5s;
+  border-radius: 5px;
+  transform: scaleX(0);
+}
+
+.search-input:hover::before {
+  transform: scaleX(1);
+}
+
+
+
+/*סגנון לטבלה*/
+th, td {
+  padding: 10px; /* ריפוד אחיד לכל התאים */
+  border: 1px solid #ddd;
+  text-align: left; /* יישור תוכן לשמאל לקריאה נוחה */
+  color:white;
+}
+
+
+td button:hover {
+  background-color: #005997;;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+th {
+  text-align: center;
+  color: #03e9f4;
+  /* font-weight: bold; כותרות מודגשות */
+}
+
+.employee-table td:nth-child(1) { /* כיוון תא תעודת זהות */
+  width: 120px; /* התאם את הרוחב למספר זיהוי */
+}
+
+.employee-table td:nth-child(4) { /* כיוון תא תאריך התחלה */
+  width: 150px; /* התאם את הרוחב לפורמט תאריך ארוך יותר */
+}
+
+/*סגנון לכפתור ייצוא לאקסל*/
+.export-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.export-button:hover {
+  background-color: #005997; /* צבע כחול כהה יותר בעת ריחוף */
 }
